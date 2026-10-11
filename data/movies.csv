@@ -1,0 +1,51 @@
+movieId,title,genres,overview
+1,The Shawshank Redemption,Drama,A man sentenced to life in prison finds redemption through friendship and hope
+2,The Godfather,Crime|Drama,An aging patriarch of an organized crime dynasty transfers control to his reluctant son
+3,The Dark Knight,Action|Crime|Drama,The Joker wreaks havoc on Gotham and challenges Batman to confront chaos
+4,Pulp Fiction,Crime|Drama,The lives of two mob hitmen and a boxer intertwine in four tales of violence and redemption
+5,The Matrix,Action|Sci-Fi,A computer hacker learns about the true nature of reality and his role in the war against its controllers
+6,Inception,Sci-Fi|Action|Thriller,A thief who steals corporate secrets through dream-sharing technology is given the task of planting an idea
+7,Interstellar,Sci-Fi|Adventure|Drama,A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival
+8,The Lord of the Rings The Fellowship of the Ring,Adventure|Fantasy|Drama,A meek Hobbit and eight companions set out on a journey to destroy the One Ring
+9,Fight Club,Drama,A insomniac office worker and a devil-may-care soapmaker form an underground fight club
+10,Forrest Gump,Comedy|Drama|Romance,The presidencies of Kennedy and Johnson and the Vietnam War unfold through the eyes of an Alabama man
+11,The Lion King,Animation|Adventure|Drama,Lion prince Simba flees after his uncle murders his father
+12,Spirited Away,Animation|Adventure|Family,A young girl enters a world of spirits and must find her way home
+13,Parasite,Comedy|Drama|Thriller,All unemployed a family schemes to become employed by a wealthy household
+14,Joker,Drama|Crime|Thriller,In Gotham City a mentally troubled comedian turns to crime and chaos
+15,The Silence of the Lambs,Crime|Drama|Thriller,A young FBI cadet seeks the help of a cannibalistic serial killer to catch another killer
+16,Gladiator,Action|Adventure|Drama,A former Roman General sets out to exact vengeance against the corrupt emperor who murdered his family
+17,The Prestige,Drama|Mystery|Sci-Fi,Two rival magicians engage in a competitive battle to create the ultimate illusion
+18,Whiplash,Drama|Music,A promising young drummer enrolls at a cut-throat music conservatory
+19,The Green Mile,Fantasy|Drama|Crime,The lives of guards on Death Row are affected by one of their charges: a black man accused of child murder
+20,The Departed,Crime|Drama|Thriller,An undercover cop and a mole try to identify each other while infiltrating an Irish gang in Boston
+21,The Avengers,Action|Sci-Fi,Earth's mightiest heroes must come together to stop Loki and his alien army
+22,Avatar,Sci-Fi|Action|Adventure,A paraplegic Marine is sent to the moon Pandora on a unique mission
+23,Titanic,Drama|Romance,A seventeen-year-old aristocrat falls in love with a kind but poor artist aboard the luxurious Titanic
+24,The Incredibles,Animation|Action|Adventure,A family of undercover superheroes try to live a quiet suburban life
+25,WALL-E,Animation|Sci-Fi|Adventure,A small waste-collecting robot inadvertently embarks on a space journey
+26,Frozen,Animation|Adventure|Comedy,A fearless princess sets out to find her sister with the help of a rugged iceman
+27,Zootopia,Animation|Adventure|Comedy,In a city of anthropomorphic animals a rookie bunny cop and a cynical con artist fox must work together
+28,Up,Animation|Adventure|Comedy,An elderly widower ties balloons to his house and flies to South America
+29,The Grand Budapest Hotel,Adventure|Comedy|Crime,A writer encounters the owner of an aging high-class hotel
+30,Mad Max Fury Road,Action|Adventure|Sci-Fi,In a post-apocalyptic wasteland a woman rebels against a tyrannical ruler
+31,John Wick,Action|Crime|Thriller,An ex-hitman comes out of retirement to track down the gangsters that killed his dog
+32,The Terminator,Sci-Fi|Action,A cyborg is sent from the future on a deadly mission
+33,Alien,Sci-Fi|Horror|Thriller,The crew of a commercial spacecraft encounter a deadly lifeform after investigating an unknown transmission
+34,Aliens,Sci-Fi|Action|Thriller,Ellen Ripley returns to the planet where her crew encountered the alien creature
+35,The Thing,Horror|Sci-Fi|Mystery,A team of American scientists in Antarctica discover a shape-shifting alien
+36,Get Out,Horror|Mystery|Thriller,A young African-American visits his white girlfriend's parents for the weekend
+37,It,Horror|Drama|Fantasy,A group of bullied kids band together to destroy a shape-shifting monster
+38,Hereditary,Horror|Drama|Mystery,A grieving family is haunted by tragic and disturbing occurrences
+39,A Quiet Place,Horror|Sci-Fi|Drama,In a post-apocalyptic world a family must live in silence to avoid blind monsters
+40,The Conjuring,Horror|Mystery|Thriller,Paranormal investigators help a family terrorized by a dark presence in their farmhouse
+41,La La Land,Comedy|Drama|Music,Two aspiring artists fall in love while pursuing their dreams in Los Angeles
+42,The Shape of Water,Drama|Fantasy|Romance,A lonely janitor forms a unique relationship with an amphibious creature
+43,The Social Network,Drama,The story of Facebook's founding and the legal battles that followed
+44,The Wolf of Wall Street,Biography|Comedy|Crime,Based on the true story of Jordan Belfort who made millions through fraud
+45,The Big Lebowski,Comedy|Crime,A laid-back slacker gets caught up in a complex kidnapping scheme
+46,Goodfellas,Biography|Crime|Drama,The story of Henry Hill and his life in the mob
+47,No Country for Old Men,Crime|Drama|Thriller,A hunter's life is turned upside down after stumbling upon a drug deal gone wrong
+48,There Will Be Blood,Drama,The story of a silver-tongued self-made oilman in early 20th century California
+49,The Revenant,Adventure|Drama|Thriller,A frontiersman fights for survival after being mauled by a bear and left for dead
+50,Dunkirk,Action|Drama|History,Allied soldiers retreat from the advancing Nazi forces during WWII

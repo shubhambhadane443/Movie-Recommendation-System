@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MovieAI - Movie Recommendation System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <span class="logo-icon">🎬</span>
+                <span class="logo-text">MovieAI</span>
+            </a>
+            <div class="nav-links">
+                <a href="#home" class="active">Home</a>
+                <a href="#popular">Popular</a>
+                <a href="#about">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">
+                Find Your Next
+                <span class="gradient-text">Favorite Movie</span>
+            </h1>
+            <p class="hero-subtitle">
+                Select a movie you like and our Machine Learning
+                recommendation system will find similar movies for you.
+            </p>
+
+            <div class="search-container">
+                <div class="search-box">
+                    <span class="search-icon">🔍</span>
+                    <input
+                        type="text"
+                        id="movieSearch"
+                        placeholder="Search for a movie..."
+                        autocomplete="off"
+                    >
+                    <div id="searchResults" class="search-results hidden"></div>
+                </div>
+                <button class="btn-primary" onclick="getRecommendations()">
+                    <span>Get Recommendations</span>
+                </button>
+            </div>
+
+            <div id="relatedSection" class="related-section hidden">
+                <h3 id="relatedTitle" class="related-title">Related Movies</h3>
+                <div id="relatedMovies" class="related-movies-grid"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Loading -->
+    <div id="loading" class="loading hidden">
+        <div class="spinner"></div>
+        <p>Finding movies for you...</p>
+    </div>
+
+    <!-- Results Section -->
+    <section id="results" class="results-section hidden">
+        <div class="results-container">
+            <h2 id="resultTitle" class="results-title">Recommended Movies</h2>
+            <div id="recommendations" class="movie-grid"></div>
+        </div>
+    </section>
+
+    <!-- Popular Movies -->
+    <section id="popular" class="popular-section">
+        <div class="section-container">
+            <h2 class="section-title">
+                <span class="section-icon">🔥</span>
+                Popular Movies
+            </h2>
+            <div id="popularMovies" class="movie-grid">
+                {% for movie in popular %}
+                <div class="movie-card" onclick="window.location.href='/movie/{{ movie.movieId }}'">
+                    {% if movie.poster_url %}
+                    <img src="{{ movie.poster_url }}" alt="{{ movie.title }} poster" class="poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                    <div class="poster-placeholder" style="display:none;">
+                        <span>No Poster</span>
+                    </div>
+                    {% else %}
+                    <div class="poster-placeholder">
+                        <span>No Poster</span>
+                    </div>
+                    {% endif %}
+                    <div class="card-content">
+                        <div class="rank">#{{ loop.index }}</div>
+                        <h3>{{ movie.title }}</h3>
+                        <p class="genres">{{ movie.genres|replace('|', ' • ') }}</p>
+                        <div class="movie-info">
+                            <span>⭐ {{ movie.rating }}/5</span>
+                            <span>👥 {{ movie.rating_count }}</span>
+                        </div>
+                        <div class="card-footer">
+                            <span class="view-btn">View Details →</span>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="section-container">
+            <h2 class="section-title">About MovieAI</h2>
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="about-icon">🤖</div>
+                    <h3>Machine Learning</h3>
+                    <p>Uses K-Nearest Neighbors algorithm to find similar movies based on user rating patterns.</p>
+                </div>
+                <div class="about-card">
+                    <div class="about-icon">📊</div>
+                    <h3>Data Driven</h3>
+                    <p>Analyzes thousands of user ratings to understand movie preferences and relationships.</p>
+                </div>
+                <div class="about-card">
+                    <div class="about-icon">⚡</div>
+                    <h3>Fast & Accurate</h3>
+                    <p>Pre-trained model delivers instant recommendations with high accuracy using cosine similarity.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="section-container">
+            <p> MovieAI - Machine Learning Movie Recommendation System</p>
+            <p class="footer-sub">Built with Flask, Python, Pandas & Scikit-learn</p>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if movie %}{{ movie.title }} - MovieAI{% else %}Movie Not Found - MovieAI{% endif %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <span class="logo-icon">🎬</span>
+                <span class="logo-text">MovieAI</span>
+            </a>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="#popular">Popular</a>
+                <a href="#about">About</a>
+            </div>
+        </div>
+    </nav>
+
+    {% if movie %}
+    <!-- Movie Detail -->
+    <section class="movie-detail-section">
+        <div class="movie-detail-card">
+            <div class="movie-detail-header">
+                <div class="movie-detail-info">
+                    <h1 class="movie-detail-title">{{ movie.title }}</h1>
+                    <div class="movie-detail-meta">
+                        <span class="genre-tag">{{ movie.genres|replace('|', ' • ') }}</span>
+                        <span class="rating-badge">⭐ {{ movie.rating }}/5</span>
+                        <span class="count-badge">👥 {{ movie.rating_count }} ratings</span>
+                    </div>
+                </div>
+                <div class="match-badge">
+                    <span>🎯 {{ "%.1f"|format((movie.rating / 5) * 100) }}% Match</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recommendations -->
+    <section class="results-section">
+        <div class="results-container">
+            <h2 class="results-title">
+                <span class="section-icon">🎬</span>
+                Movies Similar to {{ movie.title }}
+            </h2>
+            <div id="recommendations" class="movie-grid">
+                {% if recommendations %}
+                    {% for rec in recommendations %}
+                    <div class="movie-card" onclick="window.location.href='/movie/{{ rec.movieId }}'">
+                        {% if rec.poster_url %}
+                        <img src="{{ rec.poster_url }}" alt="{{ rec.title }} poster" class="poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <div class="poster-placeholder" style="display:none;">
+                            <span>No Poster</span>
+                        </div>
+                        {% else %}
+                        <div class="poster-placeholder">
+                            <span>No Poster</span>
+                        </div>
+                        {% endif %}
+                        <div class="card-content">
+                            <div class="rank">#{{ loop.index }}</div>
+                            <h3>{{ rec.title }}</h3>
+                            <p class="genres">{{ rec.genres|replace('|', ' • ') }}</p>
+                            <div class="movie-info">
+                                <span>⭐ {{ rec.rating }}/5</span>
+                                <span>👥 {{ rec.rating_count }}</span>
+                            </div>
+                            <div class="match">
+                                <span>🎯 {{ rec.similarity }}% Match</span>
+                            </div>
+                            <div class="card-footer">
+                                <span class="view-btn">View Details →</span>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                {% else %}
+                    <div class="error-message">
+                        No recommendations found for this movie.
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+    {% else %}
+    <section class="results-section">
+        <div class="results-container">
+            <div class="error-message">
+                <h2>Movie Not Found</h2>
+                <p>The movie you are looking for does not exist.</p>
+                <a href="/" class="btn-primary" style="display:inline-block;margin-top:20px;">Go Back Home</a>
+            </div>
+        </div>
+    </section>
+    {% endif %}
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="section-container">
+            <p> MovieAI - Machine Learning Movie Recommendation System</p>
+            <p class="footer-sub">Built with Flask, Python, Pandas & Scikit-learn</p>
+        </div>
+    </footer>
+
+</body>
+</html>
